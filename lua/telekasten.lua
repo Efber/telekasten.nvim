@@ -417,7 +417,8 @@ local function calculate_dates(date)
 
     local zonehour = string.sub(os.date("%z"), 1, 3)
     local zonemin = string.sub(os.date("%z"), 4, 5)
-    dates.rfc3339 = os.date(df.date, time)
+	dates.time = os.date("%H%M")
+	dates.rfc3339 = os.date(df.date, time)
         .. os.date("T%H:%M:%S")
         .. "Z"
         .. zonehour
@@ -493,6 +494,7 @@ local function linesubst(line, title, dates)
         saturday = dates.saturday,
 
         title = title,
+		time = dates.time,
     }
     for k, v in pairs(substs) do
         line = line:gsub("{{" .. k .. "}}", v)
