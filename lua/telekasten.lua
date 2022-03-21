@@ -1761,7 +1761,8 @@ local function ShowBacklinks(opts)
         return
     end
 
-    local title = Pinfo:new({ filepath = vim.fn.expand("%:p"), M.Cfg }).title
+    -- local title = Pinfo:new({ filepath = vim.fn.expand("%:p"), M.Cfg }).title
+	local title = title
     -- or vim.api.nvim_buf_get_name(0)
     builtin.live_grep({
         results_title = "Backlinks to " .. title,
