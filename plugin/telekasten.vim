@@ -1,4 +1,4 @@
-# Last Change:	2022 Mar 21
+" Last Change:	2022 Mar 21
 
 if exists('g:loaded_telekasten')
     finish
